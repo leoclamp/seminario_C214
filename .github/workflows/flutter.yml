@@ -28,7 +28,19 @@ jobs:
       run: flutter pub get
 
     - name: Run tests
-      run: flutter test
+      run: flutter test --coverage
+      
+    - name: Install lcov
+      run: sudo apt-get install lcov
+
+    - name: Convert to HTML
+      run: genhtml -o coverage/html coverage/lcov.info
+
+    - name: Upload test report
+      uses: actions/upload-artifact@v4
+      with:
+        name: test_report
+        path: coverage/html/**
         
   build_android:
     runs-on: ubuntu-latest
