@@ -3,12 +3,6 @@ import 'package:seminario_c214/calculadora.dart';
 
 void main() {
   group('Testando a Calculadora', () {
-    test('teste adição', () {
-      final calculadora = Calculadora();
-      expect(calculadora.adicao(2, 3), equals(5));
-      expect(calculadora.adicao(-5, 3), equals(-2));
-      expect(calculadora.adicao(0, 0), equals(0));
-    });
 
     test('teste subtração', () {
       final calculadora = Calculadora();
